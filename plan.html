@@ -20,7 +20,6 @@
         top: 0;
         bottom: 0;
         transition: all 0.2s;
-        background-image: url('assets/plan.png');
         background-position: center;
         background-size: cover;
         z-index: -1;
@@ -61,6 +60,13 @@
       .main-header img:hover {
         filter: invert(100%);
       }
+      .the-plan-container {
+        display: flex;
+        justify-content: center;
+      }
+      img.the-plan {
+        width: 900px;
+      }
     </style>
   </head>
   <body>
@@ -74,5 +80,8 @@
       <a class="header-link" href="plan.html">The Plan</a>
       <a class="header-link" href="#">Links</a>
     </header>
+    <div class="the-plan-container">
+      <img class="the-plan" src="assets/plan-transparent.png" />
+    </div>
   </body>
 </html>
