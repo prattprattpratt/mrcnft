@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <style>
+      :root {
+        --header-link-spacing-large: 100px;
+        --header-link-spacing-small: 50px;
+      }
+      @font-face {
+        font-family:"Covered-By-Your-Grace";
+        src: url("assets/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf") format("truetype");
+      }
+      body {
+        margin: 0;
+        font-family: "Covered-By-Your-Grace";
+      }
+      .background-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transition: all 0.2s;
+        background-image: url('assets/background.png');
+        background-position: center;
+        background-size: cover;
+        z-index: -1;
+      }
+      .main-header {
+        font-size: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 150px;
+        background: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+      .main-header .header-link {
+        margin-top: 16px;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .main-header .header-link:hover {
+        transform: rotate(-2deg);
+      }
+      .main-header .header-link:nth-child(1) {
+        margin-right: var(--header-link-spacing-large);
+      }
+      .main-header .header-link:nth-child(2) {
+        margin-right: var(--header-link-spacing-small);
+      }
+      .main-header .header-link:nth-child(4) {
+        margin-left: var(--header-link-spacing-small);
+      }
+      .main-header .header-link:nth-child(5) {
+        margin-left: var(--header-link-spacing-large);
+      }
+      .main-header img {
+        height: 220px;
+        margin-top: -60px;
+      }
+      .main-header img:hover {
+        filter: invert(100%);
+      }
+      .dynamite-section {
+        position: absolute;
+        left: calc(50% - 520px);
+        top: 250px;
+        display: flex;
+        flex-direction: column;
+      }
+      img.dynamite {
+        height: 150px;
+        transform: rotate(-35deg);
+      }
+      .dynamite-section:hover img.dynamite {
+        cursor: pointer;
+        transform: rotate(-37deg);
+      }
+      .arrow {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        margin-left: 79px;
+        margin-top: 106px;
+        border: 5px solid white;
+        border-radius: 50%;
+        transform: rotate(-65deg);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+      .arrow::after {
+        content: "";
+        position: absolute;
+        border: 15px solid #ffffff;
+        top: -6px;
+        left: 33px;
+        border-bottom-color: white;
+        border-top-width: 0;
+        border-right-width: 0;
+        border-left-color: transparent;
+      }
+      .click-here {
+        font-size: 30px;
+        color: white;
+        margin-left: 39px;
+        margin-top: -12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="background" class="background-container"></div>
+    <header class="main-header">
+      <a class="header-link" href="#">Team</a>
+      <a class="header-link" href="#">Story</a>
+      <a class="header-link logo" href="#">
+        <img src="assets/mrc-invert.png" />
+      </a>
+      <a class="header-link" href="plan.html">The Plan</a>
+      <a class="header-link" href="#">Links</a>
+    </header>
+    <div class="dynamite-section" id="dynamite-section">
+      <img class="dynamite" id="dynamite" src="assets/dynamite.png" />
+      <div class="arrow"></div>
+      <span class="click-here">Click here</span>
+    </div>
+  </body>
+  <script>
+    window.onload = () => {
+      const dynamite = document.getElementById('dynamite')
+      const dynamiteSection = document.getElementById('dynamite-section')
+      const explosionBackground = "url('assets/background-explosion.png')"
+      const regularBackground = "url('assets/background.png')"
+      const toggleBlowUpBackground = () => {
+        const background = document.getElementById('background')
+        const backgroundImgIsExploded = window.getComputedStyle(background).backgroundImage.includes('explosion')
+
+        background.style.backgroundImage = backgroundImgIsExploded ? regularBackground : explosionBackground
+        dynamite.style.display = 'none'
+        dynamiteSection.style.display = 'none'
+      }
+      dynamite.addEventListener('click', toggleBlowUpBackground)
+
+      var img=new Image();
+      img.src='assets/background-explosion.png';
+    }
+  </script>
+</html>
