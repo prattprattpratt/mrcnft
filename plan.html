@@ -22,6 +22,7 @@
         transition: all 0.2s;
         background-position: center;
         background-size: cover;
+        background-image: url("assets/parchment.png");
         z-index: -1;
       }
       .main-header {
@@ -30,7 +31,7 @@
         justify-content: center;
         align-items: flex-start;
         height: 150px;
-        background: linear-gradient(to bottom, black 50%, transparent 100%);
+        background: linear-gradient(to bottom, #bfb492 50%, transparent 100%);
       }
       .main-header .header-link {
         margin-top: 16px;
@@ -65,7 +66,8 @@
         justify-content: center;
       }
       img.the-plan {
-        width: 900px;
+        max-height: calc(100vh - 220px);
+        max-width: calc(100vw - 300px);
       }
     </style>
   </head>
