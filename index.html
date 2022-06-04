@@ -1,10 +1,6 @@
 <html>
   <head>
     <style>
-      :root {
-        --header-link-spacing-large: 100px;
-        --header-link-spacing-small: 50px;
-      }
       @font-face {
         font-family:"Covered-By-Your-Grace";
         src: url("assets/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf") format("truetype");
@@ -42,24 +38,15 @@
       .main-header .header-link:hover {
         transform: rotate(-2deg);
       }
-      .main-header .header-link:nth-child(1) {
-        margin-right: var(--header-link-spacing-large);
-      }
-      .main-header .header-link:nth-child(2) {
-        margin-right: var(--header-link-spacing-small);
-      }
-      .main-header .header-link:nth-child(4) {
-        margin-left: var(--header-link-spacing-small);
-      }
-      .main-header .header-link:nth-child(5) {
-        margin-left: var(--header-link-spacing-large);
-      }
       .main-header img {
-        height: 220px;
-        margin-top: -60px;
+        height: 135px;
       }
       .main-header img:hover {
         filter: invert(100%);
+      }
+      .main-header > * {
+        width: 220px;
+        text-align: center;
       }
       .dynamite-section {
         position: absolute;
@@ -118,7 +105,7 @@
         <img src="assets/mrc-invert.png" />
       </a>
       <a class="header-link" href="plan.html">The Plan</a>
-      <a class="header-link" href="#">Links</a>
+      <a class="header-link" href="store.html">Store</a>
     </header>
     <div class="dynamite-section" id="dynamite-section">
       <img class="dynamite" id="dynamite" src="assets/dynamite.png" />
