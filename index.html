@@ -16,7 +16,7 @@
         top: 0;
         bottom: 0;
         transition: all 0.2s;
-        background-image: url('assets/background.png');
+        background-image: url('assets/backgrounds/background.png');
         background-position: center;
         background-size: cover;
         z-index: -1;
@@ -117,8 +117,8 @@
     window.onload = () => {
       const dynamite = document.getElementById('dynamite')
       const dynamiteSection = document.getElementById('dynamite-section')
-      const explosionBackground = "url('assets/background-explosion.png')"
-      const regularBackground = "url('assets/background.png')"
+      const explosionBackground = "url('assets/backgrounds/background-explosion.png')"
+      const regularBackground = "url('assets/backgrounds/background.png')"
       const toggleBlowUpBackground = () => {
         const background = document.getElementById('background')
         const backgroundImgIsExploded = window.getComputedStyle(background).backgroundImage.includes('explosion')
@@ -130,7 +130,7 @@
       dynamite.addEventListener('click', toggleBlowUpBackground)
 
       var img=new Image();
-      img.src='assets/background-explosion.png';
+      img.src='assets/backgrounds/background-explosion.png';
     }
   </script>
 </html>
