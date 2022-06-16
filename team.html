@@ -65,12 +65,12 @@
         align-items: center;
         color: white;
         box-sizing: border-box;
-        margin-top: -100px;
+        margin-top: -50px;
       }
       .the-team-container > div img {
         height: 585px;
-        -webkit-mask: linear-gradient(to bottom, transparent 0%, black 7%);
-        mask: linear-gradient(to bottom, transparent 0%, black 7%);
+        -webkit-mask: linear-gradient(to bottom, transparent 0%, black 7%, black 81%, transparent 100%);
+        mask: linear-gradient(to bottom, transparent 0%, black 7%, black 81%, transparent 100%);
       }
       .fa-twitter {
         text-decoration: none;
@@ -80,9 +80,9 @@
       }
       .team-header {
         display: flex;
-        align-self: stretch;
         align-items: center;
-        margin: 32px 32px 16px 0;
+        margin: 32px 32px -80px 0;
+        z-index: 1;
       }
       .team-name {
         font-size: 36px;
@@ -103,7 +103,7 @@
     <div id="background" class="background-container"></div>
     <header class="main-header">
       <a class="header-link" href="team.html">Team</a>
-      <a class="header-link" href="#">Story</a>
+      <a class="header-link" href="story.html">Story</a>
       <a class="header-link logo" href="index.html">
         <img src="assets/mrc-invert.png" />
       </a>
@@ -112,35 +112,35 @@
     </header>
     <div class="the-team-container">
       <div class="team-card">
+        <div class="team-header">
+          <p class="team-name">Bob</p>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
         <img class="1" src="assets/joe.png" />
+        <p class="team-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin porttitor arcu, sed sodales enim sodales eu. Nulla facilisi.</p>
+      </div>
+      <div class="team-card">
         <div class="team-header">
           <p class="team-name">Bob</p>
           <a href="#" class="fa fa-twitter"></a>
         </div>
-        <p class="team-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin porttitor arcu, sed sodales enim sodales eu. Nulla facilisi.</p>
-      </div>
-      <div class="team-card">
         <img class="1" src="assets/chris.png" />
+        <p class="team-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin porttitor arcu, sed sodales enim sodales eu. Nulla facilisi.</p>
+      </div>
+      <div class="team-card">
         <div class="team-header">
           <p class="team-name">Bob</p>
           <a href="#" class="fa fa-twitter"></a>
         </div>
-        <p class="team-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin porttitor arcu, sed sodales enim sodales eu. Nulla facilisi.</p>
-      </div>
-      <div class="team-card">
         <img class="1" src="assets/ghali.png" />
-        <div class="team-header">
-          <p class="team-name">Bob</p>
-          <a href="#" class="fa fa-twitter"></a>
-        </div>
         <p class="team-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin porttitor arcu, sed sodales enim sodales eu. Nulla facilisi.</p>
       </div>
       <div class="team-card">
-        <img class="1" src="assets/diyaa.png" />
         <div class="team-header">
           <p class="team-name">Bob</p>
           <a href="#" class="fa fa-twitter"></a>
         </div>
+        <img class="1" src="assets/diyaa.png" />
         <p class="team-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin porttitor arcu, sed sodales enim sodales eu. Nulla facilisi.</p>
       </div>
     </div>

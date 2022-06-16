@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       @font-face {
         font-family:"Covered-By-Your-Grace";
@@ -16,9 +17,10 @@
         top: 0;
         bottom: 0;
         transition: all 0.2s;
-        background-position: center;
+        background-position: bottom center;
         background-size: cover;
-        background-image: url("assets/clock.png");
+        background-image: url("assets/black_background.png");
+        filter: brightness(4);
         z-index: -1;
       }
       .main-header {
@@ -48,15 +50,24 @@
         width: 220px;
         text-align: center;
       }
-      .store-container {
+      .story-container {
         display: flex;
-        height: calc(100% - 150px);
         justify-content: center;
-        align-items: flex-end;
-        font-size: 60px;
+        align-items: center;
+        flex-wrap: wrap;
+        width: calc(100vw - 500px);
+        margin: auto;
+      }
+      .story-container > img {
+        padding: 22px;
+        width: 50%;
         box-sizing: border-box;
-        padding-bottom: 60px;
-        color: white;
+        -webkit-mask: radial-gradient(black 50%, transparent);
+        mask: radial-gradient(black 50%, transparent);
+      }
+      .story-container > img:hover {
+        mask: none;
+        -webkit-mask: none;
       }
     </style>
   </head>
@@ -71,8 +82,13 @@
       <a class="header-link" href="plan.html">The Plan</a>
       <a class="header-link" href="store.html">Store</a>
     </header>
-    <div class="store-container">
-      Coming soon...
+    <div class="story-container">
+      <img src="assets/story1.png" />
+      <img src="assets/story2.png" />
+      <img src="assets/story3.png" />
+      <img src="assets/story4.png" />
+      <img src="assets/story5.png" />
+      <img src="assets/story6.png" />
     </div>
   </body>
 </html>
