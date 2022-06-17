@@ -59,17 +59,60 @@
         max-width: 1750px;
         margin: auto;
       }
-      .story-container > img {
+      .story-img-back {
         padding: 22px;
         width: 50%;
         max-width: 600px;
         box-sizing: border-box;
+        position: relative;
+        transition: 0.5s;
+      }
+      .story-img-back::before {
+        content: '';
+        background: white;
+        position: absolute;
+        top: 22px;
+        opacity: 0;
+        bottom: 22px;
+        left: 22px;
+        right: 22px;
+        transition: all 0.5s;
+        transform: rotateY(180deg);
+        padding: 22px;
+        font-size: 20px;
+      }
+      .story-img-back:hover::before {
+        opacity: 1;
+        transform: rotateY(0deg);
+      }
+      .story-img-back img {
+        width: 100%;
         -webkit-mask: radial-gradient(black 50%, transparent);
         mask: radial-gradient(black 50%, transparent);
+        transition: all 0.5s;
+        opacity: 1;
       }
-      .story-container > img:hover {
-        mask: none;
-        -webkit-mask: none;
+      .story-img-back:hover img {
+        opacity: 0;
+        transform: rotateY(180deg);
+      }
+      .story-img-back:nth-child(1)::before {
+        content: "Who doesn't hate banks... Right? This team certainly did, and for that reason, every bank would pay... Every single bank. They had been landing scores left and right on banks since they were 18, not for the money, for the fun. The thrill of it all, the bullets, the bangs, the boom. It all gave them a sense of joy they had never felt before, some form of malformed, maniacal joy. Most people could never understand. The story starts 3 long, long months ago - their next target was scouted and plans were made. They would carry the attack out soon. Very soon.";
+      }
+      .story-img-back:nth-child(2)::before {
+        content: "The robbery was to happen soon. Guns were obtained, ammo of all kinds too. They had lockers full of Uzi's, AK-47's and M4 Rifle's: There were only a handful of them, but why would they need more? They were skilled at what they did, the best in the world, and they ensured there was no evidence left behind. How? Dynamite, Lot's and lots of dynamite - which conveniently - they had in abundance. Everything was almost ready and the team was prepared. Very, very prepared. This heist was their biggest yet and with all their planning, it would not fail, it could not fail.";
+      }
+      .story-img-back:nth-child(3)::before {
+        content: "It was a humid night, unfortunately it was a clear night but with their expertise, this would not matter. They met up at the Clubhouse, grabbed their helmets, their guns and... of course; their dynamite. Everything was ready and so was the team. So, as night fell, they all got on their bikes, engines on - and rode towards the bank, silence between the team. Their biggest score ever was about to begin. Their hearts began to beat rapidly as they approached but the team remained cool and collected, they had prepared for months for this score, they were ready.";
+      }
+      .story-img-back:nth-child(4)::before {
+        content: "They casually strolled through the open entrance of the bank, guns out. They had no mercy, cruelly ending many innocent lives, but they did not care. Morals were not their strong suit, robbing banks was. Anyone who tried to deform their goal of obliterating the bank and the corrupted hierarchy did not deserve a life. They had the guns, they made the rules. They quickly found the vault. There was only one thing left to do. 3. 2. 1. BANG!";
+      }
+      .story-img-back:nth-child(5)::before {
+        content: "They had blown straight into the vault. Calmly, they placed their duffel bags on the counters as they swiftly scooped handfuls of cold, hard cash directly into their bags with not a care in the world. They had barely been in the bank 30 seconds and they had almost filled all of their bags, gold, cash and jewels were taken. Anything they could grab, they did and stuffed it into their pockets. It was only a matter of time before the police arrived. They needed to be quick, and quick they were.";
+      }
+      .story-img-back:nth-child(6)::before {
+        content: "They meticulously laced the bank with dynamite, ensuring the entire 62 story building would fall to the ground. It was not a graceful plan, but it did ensure that everything would fall, another bank would bite the dust. The timer on the dynamite slowly ticked down. 9. 8. 7. The team strolled out the same way the entered. 6. 5. 4. They got on their bikes again, turned on their engines, making jokes and laughing all the way. 3. 2. 1. Engines revving, they rode off into the night, some even daring to pull a wheelie or two on their escape. BANG! The job was done, the bank had fallen, soon the entire system would too. Paper money was a thing of the past. The MotoRobbers are here to prove it.";
       }
     </style>
   </head>
@@ -85,12 +128,24 @@
       <a class="header-link" href="store.html">Store</a>
     </header>
     <div class="story-container">
-      <img src="assets/story/story1.png" />
-      <img src="assets/story/story2.png" />
-      <img src="assets/story/story3.png" />
-      <img src="assets/story/story4.png" />
-      <img src="assets/story/story5.png" />
-      <img src="assets/story/story6.png" />
+      <div class="story-img-back">
+        <img src="assets/story/story1.png" />
+      </div>
+      <div class="story-img-back">
+        <img src="assets/story/story2.png" />
+      </div>
+      <div class="story-img-back">
+        <img src="assets/story/story3.png" />
+      </div>
+      <div class="story-img-back">
+        <img src="assets/story/story4.png" />
+      </div>
+      <div class="story-img-back">
+        <img src="assets/story/story5.png" />
+      </div>
+      <div class="story-img-back">
+        <img src="assets/story/story6.png" />
+      </div>
     </div>
   </body>
 </html>
