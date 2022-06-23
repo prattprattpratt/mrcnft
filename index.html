@@ -104,9 +104,6 @@
       .pulsing-light.one {
         width: 1vw;
         height: 6.7vh;
-        right: 442px;
-        top: 320px;
-
         right: 26.3vw;
         top: 35vh;
       }
@@ -141,6 +138,16 @@
           box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
         }
       }
+
+      .fizz {
+        animation: b 10s linear infinite;
+        opacity: 0;
+      }
+      @keyframes b {
+        0% { background:white; opacity: 0;}
+        20% { background: white; opacity: 0.2; }
+        100% { bottom:90vh; opacity:0; }
+      }
     </style>
   </head>
   <body>
@@ -154,6 +161,7 @@
       <a class="header-link" href="plan.html">The Plan</a>
       <a class="header-link" href="store.html">Store</a>
     </header>
+    <div class="fizz"></div>
     <div class="pulsing-light one"></div>
     <div class="pulsing-light two"></div>
     <div class="pulsing-light three"></div>
@@ -181,6 +189,32 @@
 
       var img=new Image();
       img.src='assets/backgrounds/background-explosion.png';
+
+      number = 10
+      function bubble() {
+        var b = document.createElement('div')
+        b.classList.add('fizz')
+        var size = (Math.random()*150) + 50
+        var skew = Math.random()*20
+        b.style.width = size +'px'
+        b.style.height = size +'px'
+        b.style.filter = 'blur(20px)'
+        b.style.transform = Math.random() < .5 ? 'skew('+skew*(-1)+'deg)' : 'skew('+skew+'deg)'
+        b.style.borderRadius = '50%'
+        b.style.background = 'white'
+        b.style.opacity = '.5'
+        b.style.position = 'absolute'
+        b.style.bottom = '40vh'
+        b.style.opacity = '0'
+        b.style.left = Math.random() < .5 ? Math.random() * (39 - 37) + 37 + 'vw' : Math.random() * (60 - 58) + 58 + 'vw'
+        b.style.animationDelay = Math.random()*10 + 's'
+        b.style.animationDuration = (Math.random()*10) + 2 + 's'
+        document.body.appendChild(b)
+      }
+
+      setTimeout(function() {
+        for(var i=0;i<number;i++) { bubble() }  
+      },1000)
     }
   </script>
 </html>
