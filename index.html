@@ -94,6 +94,53 @@
         margin-top: -19px;
         transform: rotate(-15deg);
       }
+      .pulsing-light {
+        --animation-duration: 3s;
+        position: fixed;
+        border-radius: 19px;
+        transition: all 0.6s;
+        animation: pulse var(--animation-duration) infinite var(--animation-delay, 0s);
+      }
+      .pulsing-light.one {
+        width: 1vw;
+        height: 6.7vh;
+        right: 442px;
+        top: 320px;
+
+        right: 26.3vw;
+        top: 35vh;
+      }
+      .pulsing-light.two {
+        width: 1vw;
+        height: 6.7vh;
+        left: 38.6vw;
+        top: 30.5vh;
+        --animation-delay: calc(var(--animation-duration) * 0.33);
+      }
+      .pulsing-light.three {
+        width: 7vw;
+        height: 0.5vh;
+        right: 11.8vw;
+        top: 32.4vh;
+        --animation-delay: calc(var(--animation-duration) * 0.66);
+        --animation-rotate: -14deg;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(0.95) rotate(var(--animation-rotate, 0deg));
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+
+        70% {
+          transform: scale(1) rotate(var(--animation-rotate, 0deg));
+          box-shadow: 0 0 0 50px rgb(255, 254, 225, 7%);
+        }
+
+        100% {
+          transform: scale(0.95) rotate(var(--animation-rotate, 0deg));
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+      }
     </style>
   </head>
   <body>
@@ -107,6 +154,9 @@
       <a class="header-link" href="plan.html">The Plan</a>
       <a class="header-link" href="store.html">Store</a>
     </header>
+    <div class="pulsing-light one"></div>
+    <div class="pulsing-light two"></div>
+    <div class="pulsing-light three"></div>
     <div class="dynamite-section" id="dynamite-section">
       <img class="dynamite" id="dynamite" src="assets/dynamite.png" />
       <div class="arrow"></div>
