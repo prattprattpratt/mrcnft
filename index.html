@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script src="https://kit.fontawesome.com/a9192582e2.js" crossorigin="anonymous"></script>
     <style>
       @font-face {
         font-family:"Covered-By-Your-Grace";
@@ -126,7 +127,7 @@
       @keyframes pulse {
         0% {
           transform: scale(0.95) rotate(var(--animation-rotate, 0deg));
-          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+          box-shadow: 0 0 0 30px rgb(255, 254, 225, 7%);
         }
 
         70% {
@@ -136,10 +137,9 @@
 
         100% {
           transform: scale(0.95) rotate(var(--animation-rotate, 0deg));
-          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+          box-shadow: 0 0 0 30px rgb(255, 254, 225, 7%);
         }
       }
-
       .fizz {
         animation: smoke-ascend 10s linear infinite;
         opacity: 0;
@@ -157,6 +157,19 @@
           bottom:90vh; 
           opacity:0;
         }
+      }
+      .fa-twitter, .fa-discord {
+        text-decoration: none;
+        color: white;
+        font-size: 50px;
+        position: fixed;
+        right: 22vw;
+      }
+      .fa-twitter {
+        top: 42vh;
+      }
+      .fa-discord {
+        top: 50vh;
       }
     </style>
   </head>
@@ -180,6 +193,8 @@
       <div class="arrow"></div>
       <span class="click-here">Click here</span>
     </div>
+    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-discord"></i></a>
   </body>
   <script>
     window.onload = () => {
