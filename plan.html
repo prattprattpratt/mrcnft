@@ -148,12 +148,44 @@
   <script>
     window.onload = () => {
       const planLinks = document.getElementsByClassName('plan-link')
+      const planText = document.getElementById('plan-text')
       const planTextContainer = document.getElementById('plan-text-container')
-      const togglePlanText = () => {
+      const togglePlanText = (e) => {
+        const id = e.target.id
+        var text = ''
+        console.log(id)
+        switch (id) {
+          case 'the-beginning':
+            text = `- Our webpage is being carefully constructed by our web developer.
+- Our art is all currently being done by a personal friend of ours and consists of 69+ unique attributes.
+- We are allowing anyone and everyone to come and mint their own Robber! No whitelists here.`
+            break
+          case 'the-score':
+            text = `- We are opening a unique store providing high quality merchandise for the MotoRobbers which is available to all.
+- We are giving away all sorts of perks and items to NFT holders consistently.
+- The Club was founded on the marigold sands of Egypt. Why not see it for yourself someday?
+- Here at the club our scores arent for the money. We work tirelessly to be the modern day Robin Hoods. Why can't we help you?
+- We provide high quality crypto signals for anyone who's holding a Robber.
+- We are releasing our very own custom Air Force 1 Shoes.`
+            break
+          case 'the-bomb':
+            text = `- Does your NFT have a golden head? We provide EXCLUSIVE giveaways and more perks to those that do.
+            - Every single member of the club rides a motorcycle. Why don't you? 
+            - Do you really want to join the club? Maybe you can... we will show you how.
+            - Obviously, more benefits come from holding a MotoRobbers Club NFT, come and see all of our perks now.`
+            break
+          case 'the-escape':
+            text = `- We value those members with a golden helmet, we think a matching hoodie or T-Shirt often goes well with them too.
+- Our members know how to ride a bike. Fast. Let's test their skills.
+- We've hit almost every bank there is, there has to be more we've missed? Let's find them.
+- We are growing our community daily, with absolutely no intention of stopping.`
+            break
+        }
+        planText.innerHTML = text
         planTextContainer.classList.toggle('visible')
       }
       Array.from(planLinks).forEach(e => {
-        e.addEventListener('click', togglePlanText)
+        e.addEventListener('click', (e) => togglePlanText(e))
       })
       planTextContainer.addEventListener('click', togglePlanText)
     }
