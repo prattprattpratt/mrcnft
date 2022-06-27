@@ -34,6 +34,7 @@
         color: white;
         text-decoration: none;
         text-transform: uppercase;
+        transition: all 0.2s;
       }
       .main-header .header-link:hover {
         transform: rotate(-2deg);
@@ -60,13 +61,14 @@
         text-align: center;
         position: fixed;
         font-size: 40px;
-        line-height: 34px;
-        color: #d81e1a;
+        line-height: 40px;
+        color: #353c45;
         letter-spacing: 1px;
         font-weight: bold;
+        text-decoration: none;
       }
-      .the-score::before {
-        margin-left: -25px;
+      .plan-links a:hover {
+        filter: brightness(1.5);
       }
       ::selection {
         background: none;
@@ -75,21 +77,67 @@
         left: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 4.65);
         top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.8));
       }
+      .the-beginning::before {
+        content: '';
+        position: absolute;
+        background: #d81e1a;
+        width: 79%;
+        height: 185%;
+        z-index: -1;
+        border-radius: 45%;
+        margin-top: -17px;
+        margin-left: 26px;
+      }
       .the-score {
         right: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 2.55);
         top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.06));
         height: 86px;
         width: 80px;
       }
+      .the-score::before {
+        content: '';
+        position: absolute;
+        background: #d81e1a;
+        width: 130%;
+        height: 150%;
+        z-index: -1;
+        border-radius: 45%;
+        margin-top: -18px;
+        margin-left: -25px;
+        transform: rotate(18deg);
+      }
       .the-bomb {
         right: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 2.45);
         top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.43));
         height: 62px;
       }
+      .the-bomb::before {
+        content: '';
+        position: absolute;
+        background: #d81e1a;
+        width: 97%;
+        height: 125%;
+        z-index: -1;
+        border-radius: 45%;
+        margin-top: -18px;
+        transform: rotate(-21deg);
+      }
       .the-escape {
         right: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 2.35);
         top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.93));
         height: 57px;
+      }
+      .the-escape::before {
+        content: '';
+        position: absolute;
+        background: #d81e1a;
+        width: 69%;
+        height: 85%;
+        z-index: -1;
+        border-radius: 45%;
+        margin-top: -7px;
+        margin-left: 25px;
+        transform: rotate(-5deg);
       }
       .plan-text-container {
         position: absolute;
@@ -156,29 +204,41 @@
         console.log(id)
         switch (id) {
           case 'the-beginning':
-            text = `- Our webpage is being carefully constructed by our web developer.
-- Our art is all currently being done by a personal friend of ours and consists of 69+ unique attributes.
-- We are allowing anyone and everyone to come and mint their own Robber! No whitelists here.`
+            text = ` 
+              <ul>
+                <li>Our webpage is being carefully constructed by our web developer.</li>
+                <li>Our art is all currently being done by a personal friend of ours and consists of 69+ unique attributes.</li>
+                <li>We are allowing anyone and everyone to come and mint their own Robber! No whitelists here.</li>
+              </ul>`
             break
           case 'the-score':
-            text = `- We are opening a unique store providing high quality merchandise for the MotoRobbers which is available to all.
-- We are giving away all sorts of perks and items to NFT holders consistently.
-- The Club was founded on the marigold sands of Egypt. Why not see it for yourself someday?
-- Here at the club our scores arent for the money. We work tirelessly to be the modern day Robin Hoods. Why can't we help you?
-- We provide high quality crypto signals for anyone who's holding a Robber.
-- We are releasing our very own custom Air Force 1 Shoes.`
+            text = `
+              <ul>
+                <li>We are opening a unique store providing high quality merchandise for the MotoRobbers which is available to all.</li>
+                <li>We are giving away all sorts of perks and items to NFT holders consistently.</li>
+                <li>The Club was founded on the marigold sands of Egypt. Why not see it for yourself someday?</li>
+                <li>Here at the club our scores arent for the money. We work tirelessly to be the modern day Robin Hoods. Why can't we help you?</li>
+                <li>We provide high quality crypto signals for anyone who's holding a Robber.</li>
+                <li>We are releasing our very own custom Air Force 1 Shoes.</li>
+              </ul>`
             break
           case 'the-bomb':
-            text = `- Does your NFT have a golden head? We provide EXCLUSIVE giveaways and more perks to those that do.
-            - Every single member of the club rides a motorcycle. Why don't you? 
-            - Do you really want to join the club? Maybe you can... we will show you how.
-            - Obviously, more benefits come from holding a MotoRobbers Club NFT, come and see all of our perks now.`
+            text = `
+              <ul>
+                <li>Does your NFT have a golden head? We provide EXCLUSIVE giveaways and more perks to those that do.</li>
+                <li>Every single member of the club rides a motorcycle. Why don't you?</li>
+                <li>Do you really want to join the club? Maybe you can... we will show you how.</li>
+                <li>Obviously, more benefits come from holding a MotoRobbers Club NFT, come and see all of our perks now.</li>
+              </ul>`
             break
           case 'the-escape':
-            text = `- We value those members with a golden helmet, we think a matching hoodie or T-Shirt often goes well with them too.
-- Our members know how to ride a bike. Fast. Let's test their skills.
-- We've hit almost every bank there is, there has to be more we've missed? Let's find them.
-- We are growing our community daily, with absolutely no intention of stopping.`
+            text = `
+              <ul>
+                <li>We value those members with a golden helmet, we think a matching hoodie or T-Shirt often goes well with them too.</li>
+                <li>Our members know how to ride a bike. Fast. Let's test their skills.</li>
+                <li>We've hit almost every bank there is, there has to be more we've missed? Let's find them.</li>
+                <li>We are growing our community daily, with absolutely no intention of stopping.</li>
+              </ul>`
             break
         }
         planText.innerHTML = text
