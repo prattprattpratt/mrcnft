@@ -10,16 +10,23 @@
         --background-brightness: brightness(1);
       }
       .the-plan-container {
-        display: flex;
-        justify-content: center;
+        position: relative;
+        margin: auto;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
       }
+      .the-plan-container::-webkit-scrollbar { 
+          display: none;  /* Safari and Chrome */
+      }
+      @media screen and (min-width: 1000px) { .the-plan-container { width: 1000px; } }
+      @media screen and (max-width: 1000px) { .the-plan-container { overflow-x: scroll; } }
       img.the-plan {
-        max-height: calc(100vh - 260px);
-        max-width: 1000px;
+        width: 1000px;
       }
       .plan-links a {
         text-align: center;
-        position: fixed;
+        position: absolute;
+        z-index: 1;
         font-size: 40px;
         line-height: 40px;
         color: #353c45;
@@ -34,8 +41,8 @@
         background: none;
       }
       .the-beginning {
-        left: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 4.65);
-        top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.8));
+        bottom: 90px;
+        left: 281px;
       }
       .the-beginning::before {
         content: '';
@@ -49,8 +56,8 @@
         margin-left: 26px;
       }
       .the-score {
-        right: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 2.55);
-        top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.06));
+        left: 814px;
+        top: 42px;
         height: 86px;
         width: 80px;
       }
@@ -67,9 +74,10 @@
         transform: rotate(18deg);
       }
       .the-bomb {
-        right: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 2.45);
-        top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.43));
+        left: 766px;
+        top: 263px;
         height: 62px;
+        width: 130px;
       }
       .the-bomb::before {
         content: '';
@@ -79,13 +87,14 @@
         height: 125%;
         z-index: -1;
         border-radius: 45%;
-        margin-top: -18px;
+        margin-left: -30px;
         transform: rotate(-21deg);
       }
       .the-escape {
-        right: calc(50vw - min(996px, calc(1.51 * calc(100vh - 260px))) / 2.35);
-        top: calc(150px + calc(min(659px, calc(100vh - 260px)) * 0.93));
+        bottom: -10px;
+        left: 728px;
         height: 57px;
+        width: 190px;
       }
       .the-escape::before {
         content: '';
@@ -115,9 +124,11 @@
       .plan-text-container.visible {
         opacity: 1;
         pointer-events: all;
+        z-index: 1;
       }
       .plan-text {
         height: calc(100vh - 260px);
+        width: 100vw;
         max-width: 1000px;
         aspect-ratio: 1.51;
         margin-top: 150px;
@@ -132,12 +143,12 @@
   <body>
     <div class="the-plan-container">
       <img class="the-plan" src="assets/plan-transparent.png" />
-    </div>
-    <div class="plan-links">
-      <a href="#" id="the-beginning" class="plan-link the-beginning">The Beginning</a>
-      <a href="#" id="the-score" class="plan-link the-score">The Score</a>
-      <a href="#" id="the-bomb" class="plan-link the-bomb">The Bomb</a>
-      <a href="#" id="the-escape" class="plan-link the-escape">The Escape</a>
+      <div class="plan-links">
+        <a href="#" id="the-beginning" class="plan-link the-beginning">The Beginning</a>
+        <a href="#" id="the-score" class="plan-link the-score">The Score</a>
+        <a href="#" id="the-bomb" class="plan-link the-bomb">The Bomb</a>
+        <a href="#" id="the-escape" class="plan-link the-escape">The Escape</a>
+      </div>
     </div>
     <div id="plan-text-container" class="plan-text-container">
       <div id="plan-text" class="plan-text">Lorem ipsum dolor...</div>
