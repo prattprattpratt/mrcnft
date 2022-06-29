@@ -1,62 +1,22 @@
 <html>
   <head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      @font-face {
-        font-family:"Covered-By-Your-Grace";
-        src: url("assets/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf") format("truetype");
-      }
-      body {
-        margin: 0;
-        font-family: "Covered-By-Your-Grace";
-      }
-      .background-container {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        transition: all 0.2s;
-        background-position: bottom center;
-        background-size: cover;
-        background-image: url("assets/backgrounds/black_background.png");
-        filter: brightness(4);
-        z-index: -1;
-      }
-      .main-header {
-        font-size: 55px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 150px;
-        background: linear-gradient(to bottom, black 50%, transparent 100%);
-      }
-      .main-header .header-link {
-        margin-top: 16px;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
-      .main-header .header-link:hover {
-        transform: rotate(-2deg);
-      }
-      .main-header img {
-        height: 135px;
-      }
-      .main-header img:hover {
-        filter: invert(100%);
-      }
-      .main-header > * {
-        width: 220px;
-        text-align: center;
+      :root {
+        --main-header-background-color: black;
+        --background-image: url('assets/backgrounds/black_background.png');
+        --background-position: bottom center;
+        --background-brightness: brightness(4);
       }
       .story-container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: calc(100vw - 500px);
-        max-width: 1750px;
+        width: 100vw;
+        max-width: 1000px;
         margin: auto;
       }
       .story-img-back {
@@ -67,6 +27,7 @@
         position: relative;
         transition: 0.5s;
       }
+      @media (max-width: 786px) { .story-img-back { width: 440px; } }
       .story-img-back::before {
         content: '';
         background: white;
@@ -79,11 +40,12 @@
         transition: all 0.5s;
         transform: rotateY(180deg);
         padding: 22px;
-        font-size: 14px;
+        font-size: 17px;
       }
-      @media screen and (min-width: 1450px) { .story-img-back::before { font-size: 16px; } }
-      @media screen and (min-width: 1550px) { .story-img-back::before { font-size: 18px; } }
-      @media screen and (min-width: 1643px) { .story-img-back::before { font-size: 20px; } }
+      @media screen and (max-width: 974px) { .story-img-back::before { font-size: 15px; } }
+      @media screen and (max-width: 902px) { .story-img-back::before { font-size: 13px; } }
+      @media screen and (max-width: 800px) { .story-img-back::before { font-size: 12px; } }
+      @media screen and (max-width: 786px) { .story-img-back::before { font-size: 15px; } }
       .story-img-back:hover::before {
         opacity: 1;
         transform: rotateY(0deg);
@@ -120,16 +82,6 @@
     </style>
   </head>
   <body>
-    <div id="background" class="background-container"></div>
-    <header class="main-header">
-      <a class="header-link" href="team.html">Team</a>
-      <a class="header-link" href="story.html">Story</a>
-      <a class="header-link logo" href="index.html">
-        <img src="assets/mrc-invert.png" />
-      </a>
-      <a class="header-link" href="plan.html">The Plan</a>
-      <a class="header-link" href="store.html">Store</a>
-    </header>
     <div class="story-container">
       <div class="story-img-back">
         <img src="assets/story/story1.png" />

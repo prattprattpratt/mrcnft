@@ -1,57 +1,18 @@
 <html>
   <head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="header.css" />
     <script src="https://kit.fontawesome.com/a9192582e2.js" crossorigin="anonymous"></script>
     <style>
-      @font-face {
-        font-family:"Covered-By-Your-Grace";
-        src: url("assets/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf") format("truetype");
-      }
-      body {
-        margin: 0;
-        font-family: "Covered-By-Your-Grace";
-      }
-      .background-container {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        transition: all 0.2s;
-        background-image: url('assets/backgrounds/background.png');
-        background-position: center;
-        background-size: cover;
-        z-index: -1;
-      }
-      .main-header {
-        font-size: 55px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 150px;
-        background: linear-gradient(to bottom, black 50%, transparent 100%);
-      }
-      .main-header .header-link {
-        margin-top: 16px;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
-      .main-header .header-link:hover {
-        transform: rotate(-2deg);
-      }
-      .main-header img {
-        height: 135px;
-      }
-      .main-header img:hover {
-        filter: invert(100%);
-      }
-      .main-header > * {
-        width: 220px;
-        text-align: center;
+      :root {
+        --main-header-background-color: black;
+        --background-image: url('assets/backgrounds/background.png');
+        --background-position: center;
+        --background-brightness: brightness(1);
       }
       .dynamite-section {
         position: absolute;
-        left: calc(50% - 520px);
+        left: max(calc(50% - 520px), -20px);
         top: 250px;
         display: flex;
         flex-direction: column;
@@ -140,7 +101,7 @@
           box-shadow: 0 0 0 30px rgb(255, 254, 225, 7%);
         }
       }
-      .fizz {
+      .smoke {
         animation: smoke-ascend 10s linear infinite;
         opacity: 0;
       }
@@ -165,6 +126,7 @@
         position: fixed;
         right: 22vw;
       }
+      @media (max-width: 969px) { .fa-twitter, .fa-discord { right: 8vw; } }
       .fa-twitter {
         top: 42vh;
       }
@@ -174,17 +136,7 @@
     </style>
   </head>
   <body>
-    <div id="background" class="background-container"></div>
-    <header class="main-header">
-      <a class="header-link" href="team.html">Team</a>
-      <a class="header-link" href="story.html">Story</a>
-      <a class="header-link logo" href="#">
-        <img src="assets/mrc-invert.png" />
-      </a>
-      <a class="header-link" href="plan.html">The Plan</a>
-      <a class="header-link" href="store.html">Store</a>
-    </header>
-    <div class="fizz"></div>
+    <div class="smoke"></div>
     <div class="pulsing-light one"></div>
     <div class="pulsing-light two"></div>
     <div class="pulsing-light three"></div>
@@ -196,51 +148,4 @@
     <a href="#"><i class="fa-brands fa-twitter"></i></a>
     <a href="#"><i class="fa-brands fa-discord"></i></a>
   </body>
-  <script>
-    window.onload = () => {
-      const dynamite = document.getElementById('dynamite')
-      const dynamiteSection = document.getElementById('dynamite-section')
-      const explosionBackground = "url('assets/backgrounds/background-explosion.png')"
-      const regularBackground = "url('assets/backgrounds/background.png')"
-      const toggleBlowUpBackground = () => {
-        const background = document.getElementById('background')
-        const backgroundImgIsExploded = window.getComputedStyle(background).backgroundImage.includes('explosion')
-
-        background.style.backgroundImage = backgroundImgIsExploded ? regularBackground : explosionBackground
-        dynamite.style.display = 'none'
-        dynamiteSection.style.display = 'none'
-      }
-      dynamite.addEventListener('click', toggleBlowUpBackground)
-
-      var img=new Image();
-      img.src='assets/backgrounds/background-explosion.png';
-
-      function makeSmoke() {
-        const smoke = document.createElement('div');
-        const size = (Math.random()*150) + 50;
-        const skew = Math.random()*20;
-        smoke.classList.add('fizz');
-        smoke.style.width = size +'px';
-        smoke.style.height = size +'px';
-        smoke.style.filter = 'blur(20px)';
-        smoke.style.transform = Math.random() < .5 ? 'skew('+skew * (-1) + 'deg)' : 'skew(' + skew + 'deg)';
-        smoke.style.borderRadius = '50%';
-        smoke.style.background = 'white';
-        smoke.style.opacity = '.5';
-        smoke.style.position = 'absolute';
-        smoke.style.bottom = '37vh';
-        smoke.style.opacity = '0';
-        smoke.style.left = Math.random() < .5 ? Math.random() * (37 - 36) + 36 + 'vw' : Math.random() * (62 - 60) + 60 + 'vw';
-        smoke.style.animationDelay = Math.random() * 10 + 's';
-        smoke.style.animationDuration = (Math.random() * 10) + 2 + 's';
-        document.body.appendChild(smoke);
-      }
-
-      setTimeout(() => {
-        for (var i = 0; i < 10; i++) { 
-          makeSmoke(); 
-        }  
-      }, 1000);
-    }
-  </script>
 </html>

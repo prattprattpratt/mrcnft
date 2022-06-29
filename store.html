@@ -1,52 +1,13 @@
 <html>
   <head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="header.css" />
     <style>
-      @font-face {
-        font-family:"Covered-By-Your-Grace";
-        src: url("assets/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf") format("truetype");
-      }
-      body {
-        margin: 0;
-        font-family: "Covered-By-Your-Grace";
-      }
-      .background-container {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        transition: all 0.2s;
-        background-position: center;
-        background-size: cover;
-        background-image: url("assets/backgrounds/clock.png");
-        z-index: -1;
-      }
-      .main-header {
-        font-size: 55px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 150px;
-        background: linear-gradient(to bottom, black 50%, transparent 100%);
-      }
-      .main-header .header-link {
-        margin-top: 16px;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
-      .main-header .header-link:hover {
-        transform: rotate(-2deg);
-      }
-      .main-header img {
-        height: 135px;
-      }
-      .main-header img:hover {
-        filter: invert(100%);
-      }
-      .main-header > * {
-        width: 220px;
-        text-align: center;
+      :root {
+        --main-header-background-color: black;
+        --background-image: url('assets/backgrounds/clock.png');
+        --background-position: center;
+        --background-brightness: brightness(1);
       }
       .store-container {
         display: flex;
@@ -61,16 +22,6 @@
     </style>
   </head>
   <body>
-    <div id="background" class="background-container"></div>
-    <header class="main-header">
-      <a class="header-link" href="team.html">Team</a>
-      <a class="header-link" href="story.html">Story</a>
-      <a class="header-link logo" href="index.html">
-        <img src="assets/mrc-invert.png" />
-      </a>
-      <a class="header-link" href="plan.html">The Plan</a>
-      <a class="header-link" href="store.html">Store</a>
-    </header>
     <div class="store-container">
       Coming soon...
     </div>

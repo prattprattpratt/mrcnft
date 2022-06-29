@@ -1,64 +1,26 @@
 <html>
   <head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      @font-face {
-        font-family:"Covered-By-Your-Grace";
-        src: url("assets/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf") format("truetype");
-      }
-      body {
-        margin: 0;
-        font-family: "Covered-By-Your-Grace";
-      }
-      .background-container {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        transition: all 0.2s;
-        background-position: bottom center;
-        background-size: cover;
-        background-image: url("assets/backgrounds/black_background.png");
-        z-index: -1;
-      }
-      .main-header {
-        font-size: 55px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 150px;
-        background: linear-gradient(to bottom, black 50%, transparent 100%);
-      }
-      .main-header .header-link {
-        margin-top: 16px;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
-      .main-header .header-link:hover {
-        transform: rotate(-2deg);
-      }
-      .main-header img {
-        height: 135px;
-      }
-      .main-header img:hover {
-        filter: invert(100%);
-      }
-      .main-header > * {
-        width: 220px;
-        text-align: center;
+      :root {
+        --main-header-background-color: black;
+        --background-image: url('assets/backgrounds/black_background.png');
+        --background-position: bottom center;
+        --background-brightness: brightness(1);
       }
       .the-team-container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: calc(100vw - 500px);
-        max-width: 1200px;
+        width: 100vw;
+        max-width: 1000px;
         margin: auto;
       }
-      .the-team-container > div {
+      .team-card {
+        position: relative;
         padding: 42px;
         width: 50%;
         display: flex;
@@ -68,8 +30,9 @@
         box-sizing: border-box;
         margin-top: -50px;
       }
-      .the-team-container > div img {
-        height: 585px;
+      @media (max-width: 786px) { .team-card { width: 440px; } }
+      .team-card img {
+        width: 140%;
         -webkit-mask: linear-gradient(to bottom, transparent 0%, black 7%, black 81%, transparent 100%);
         mask: linear-gradient(to bottom, transparent 0%, black 7%, black 81%, transparent 100%);
       }
@@ -94,23 +57,20 @@
         font-size: 24px;
         letter-spacing: 1px;
         position: absolute;
-        width: 230px;
-        margin-left: 140px;
-        margin-top: 340px;
+        width: 46%;
+        bottom: 10%;
+        left: 29%;
       }
+      @media (max-width: 981px) { .team-text { font-size: 23px; } }
+      @media (max-width: 945px) { .team-text { font-size: 22px; } }
+      @media (max-width: 909px) { .team-text { font-size: 21px; } }
+      @media (max-width: 873px) { .team-text { font-size: 20px; } }
+      @media (max-width: 837px) { .team-text { font-size: 19px; } }
+      @media (max-width: 801px) { .team-text { font-size: 18px; } }
+      @media (max-width: 786px) { .team-text { font-size: 21px; } }
     </style>
   </head>
   <body>
-    <div id="background" class="background-container"></div>
-    <header class="main-header">
-      <a class="header-link" href="team.html">Team</a>
-      <a class="header-link" href="story.html">Story</a>
-      <a class="header-link logo" href="index.html">
-        <img src="assets/mrc-invert.png" />
-      </a>
-      <a class="header-link" href="plan.html">The Plan</a>
-      <a class="header-link" href="store.html">Store</a>
-    </header>
     <div class="the-team-container">
       <div class="team-card">
         <div class="team-header">
