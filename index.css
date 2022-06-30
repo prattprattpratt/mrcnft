@@ -27,7 +27,8 @@ body {
   background: linear-gradient(to bottom, var(--main-header-background-color) 50%, transparent 100%);
   overflow: hidden;
 }
-@media (min-width: 612px) { .main-header { font-size: 35px; } }
+@media (max-width: 611px) { .main-header { display: none; } }
+@media (min-width: 612px) { .main-header { font-size: 35px; } .mobile-header { display: none; } }
 @media (min-width: 786px) { .main-header { font-size: 45px; } }
 @media (min-width: 969px) { .main-header { font-size: 55px; } }
 .main-header .header-link {

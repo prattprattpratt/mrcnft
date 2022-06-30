@@ -1,14 +1,25 @@
 window.onload = () => {
   const header = `
-    <header class="main-header">
-      <a class="header-link" href="team.html">Team</a>
-      <a class="header-link" href="story.html">Story</a>
-      <a class="header-link logo" href="index.html">
-        <img src="assets/mrc-invert.png" />
-      </a>
-      <a class="header-link" href="plan.html">The Plan</a>
-      <a class="header-link" href="store.html">Store</a>
-    </header>
+    <div>
+      <header class="main-header">
+        <a class="header-link" href="team.html">Team</a>
+        <a class="header-link" href="story.html">Story</a>
+        <a class="header-link logo" href="index.html">
+          <img src="assets/mrc-invert.png" />
+        </a>
+        <a class="header-link" href="plan.html">The Plan</a>
+        <a class="header-link" href="store.html">Store</a>
+      </header>
+      <header class="mobile-header">
+        <a class="header-link" href="team.html">Team</a>
+        <a class="header-link" href="story.html">Story</a>
+        <a class="header-link logo" href="index.html">
+          <img src="assets/mrc-invert.png" />
+        </a>
+        <a class="header-link" href="plan.html">The Plan</a>
+        <a class="header-link" href="store.html">Store</a>
+      </header>
+    </div>
   `
   const div = document.createElement('div');
   div.innerHTML = header.trim();
