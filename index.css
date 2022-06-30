@@ -50,3 +50,42 @@ body {
   width: 220px;
   text-align: center;
 }
+.mobile-header {
+  transition: all 0.4s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.8);
+  z-index: 1;
+  margin-left: -100vw;
+  box-sizing: border-box;
+  padding: 120px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-header.visible {
+  margin-left: 0;
+}
+.mobile-header img {
+  height: 85px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 24px;
+}
+.mobile-header .fa-bars {
+  font-size: 40px;
+  color: white;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 46px 24px;
+  cursor: pointer;
+}
+.mobile-header-link {
+  color: white;
+  font-size: 60px;
+  padding: 24px 0;
+}

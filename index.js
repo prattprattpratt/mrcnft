@@ -10,14 +10,15 @@ window.onload = () => {
         <a class="header-link" href="plan.html">The Plan</a>
         <a class="header-link" href="store.html">Store</a>
       </header>
-      <header class="mobile-header">
-        <a class="header-link" href="team.html">Team</a>
-        <a class="header-link" href="story.html">Story</a>
-        <a class="header-link logo" href="index.html">
+      <header id="mobile-header" class="mobile-header">
+        <i id="mobile-header-toggle" class="fa-solid fa-bars"></i>
+        <a class="mobile-header-link" href="team.html">Team</a>
+        <a class="mobile-header-link" href="story.html">Story</a>
+        <a class="logo" href="index.html">
           <img src="assets/mrc-invert.png" />
         </a>
-        <a class="header-link" href="plan.html">The Plan</a>
-        <a class="header-link" href="store.html">Store</a>
+        <a class="mobile-header-link" href="plan.html">The Plan</a>
+        <a class="mobile-header-link" href="store.html">Store</a>
       </header>
     </div>
   `
@@ -29,6 +30,12 @@ window.onload = () => {
   backgroundContainer.classList.add('background-container')
   backgroundContainer.id = 'background'
   document.body.prepend(backgroundContainer)
+
+  const mobileMenuToggle = document.getElementById('mobile-header-toggle')
+  const mobileHeader = document.getElementById('mobile-header')
+  mobileMenuToggle.addEventListener('click', () => {
+    mobileHeader.classList.toggle('visible')
+  })
 
   const isHomepage = !['store', 'team', 'story', 'plan'].some(e => window.location.pathname.includes(e))
   if (isHomepage) {
