@@ -18,15 +18,20 @@
       .the-plan-container::-webkit-scrollbar { 
           display: none;  /* Safari and Chrome */
       }
-      @media screen and (min-width: 1000px) { .the-plan-container { width: 1000px; } }
+      @media screen and (min-width: 1000px) { .the-plan-container { width: 1000px; display: flex; justify-content: center; } }
       @media screen and (max-width: 1000px) { .the-plan-container { overflow-x: scroll; } }
       img.the-plan {
-        width: 1000px;
         max-height: calc(100vh - 240px);
+      }
+      .plan-links {
+        position: relative;
       }
       .plan-links a {
         text-align: center;
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         z-index: 1;
         font-size: 40px;
         line-height: 40px;
@@ -35,78 +40,31 @@
         font-weight: bold;
         text-decoration: none;
       }
+      .plan-links a::before {
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        background: #d81e1a;
+        z-index: -1;
+        border-radius: 45%;
+      }
       .plan-links a:hover {
         filter: brightness(1.5);
       }
       ::selection {
         background: none;
       }
-      .the-beginning {
-        bottom: 14%;
-        left: 281px;
-      }
-      .the-beginning::before {
-        content: '';
-        position: absolute;
-        background: #d81e1a;
-        width: 79%;
-        height: 185%;
-        z-index: -1;
-        border-radius: 45%;
-        margin-top: -17px;
-        margin-left: 26px;
-      }
-      .the-score {
-        left: 814px;
-        top: 6.3%;
-        height: 86px;
-        width: 80px;
+      .the-escape, .the-beginning {
+        white-space: nowrap;
       }
       .the-score::before {
-        content: '';
-        position: absolute;
-        background: #d81e1a;
-        width: 130%;
-        height: 150%;
-        z-index: -1;
-        border-radius: 45%;
-        margin-top: -18px;
-        margin-left: -25px;
         transform: rotate(18deg);
       }
-      .the-bomb {
-        left: 766px;
-        top: 40%;
-        height: 62px;
-        width: 130px;
-      }
       .the-bomb::before {
-        content: '';
-        position: absolute;
-        background: #d81e1a;
-        width: 97%;
-        height: 125%;
-        z-index: -1;
-        border-radius: 45%;
-        margin-left: -30px;
         transform: rotate(-21deg);
       }
-      .the-escape {
-        bottom: -10px;
-        left: 728px;
-        height: 57px;
-        width: 190px;
-      }
       .the-escape::before {
-        content: '';
-        position: absolute;
-        background: #d81e1a;
-        width: 69%;
-        height: 85%;
-        z-index: -1;
-        border-radius: 45%;
-        margin-top: -7px;
-        margin-left: 25px;
         transform: rotate(-5deg);
       }
       .plan-text-container {
@@ -143,8 +101,8 @@
   </head>
   <body>
     <div class="the-plan-container">
-      <img class="the-plan" src="assets/plan-transparent.png" />
       <div class="plan-links">
+        <img id="plan-image" class="the-plan" src="assets/plan-transparent.png" />
         <a href="#" id="the-beginning" class="plan-link the-beginning">The Beginning</a>
         <a href="#" id="the-score" class="plan-link the-score">The Score</a>
         <a href="#" id="the-bomb" class="plan-link the-bomb">The Bomb</a>

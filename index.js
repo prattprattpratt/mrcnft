@@ -66,6 +66,7 @@ window.onload = () => {
   }
 
   if (window.location.pathname.includes('plan.html')) {
+    // dynamically populate plan text based on which step is clicked
     const planLinks = document.getElementsByClassName('plan-link')
     const planText = document.getElementById('plan-text')
     const planTextContainer = document.getElementById('plan-text-container')
@@ -119,5 +120,34 @@ window.onload = () => {
       e.addEventListener('click', (e) => togglePlanText(e))
     })
     planTextContainer.addEventListener('click', togglePlanText)
+
+    // position plan steps dynamically based on the image size
+    const planImage = document.getElementById('plan-image')
+    const beginningElement = document.getElementById('the-beginning')
+    const scoreElement = document.getElementById('the-score')
+    const bombElement = document.getElementById('the-bomb')
+    const escapeElement = document.getElementById('the-escape')
+    const planImageWidth = planImage.clientWidth
+    const planImageHeight = planImage.clientHeight
+
+    scoreElement.style.width = planImageWidth * 0.105; // 104.58px= 996px
+    scoreElement.style.left = planImageWidth * 0.8; // 796.8px = 996px
+    scoreElement.style.height = planImageHeight * 0.19; // 125.21px = 659px
+    scoreElement.style.top = planImageHeight * 0.035; // 23.065px = 659px
+
+    bombElement.style.width = planImageWidth * 0.1305; // 104.58px= 996px
+    bombElement.style.left = planImageWidth * 0.769; // 796.8px = 996px
+    bombElement.style.height = planImageHeight * 0.105; // 125.21px = 659px
+    bombElement.style.top = planImageHeight * 0.41; // 23.065px = 659px
+
+    escapeElement.style.width = planImageWidth * 0.115; // 104.58px= 996px
+    escapeElement.style.left = planImageWidth * 0.777; // 796.8px = 996px
+    escapeElement.style.height = planImageHeight * 0.0765; // 125.21px = 659px
+    escapeElement.style.bottom = 0; // 23.065px = 659px
+
+    beginningElement.style.width = planImageWidth * 0.17; // 104.58px= 996px
+    beginningElement.style.left = planImageWidth * 0.31; // 796.8px = 996px
+    beginningElement.style.height = planImageHeight * 0.1; // 125.21px = 659px
+    beginningElement.style.bottom = planImageHeight * 0.12; // 23.065px = 659px
   }
 }
