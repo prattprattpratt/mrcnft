@@ -19,7 +19,8 @@ window.onload = () => {
   backgroundContainer.id = 'background'
   document.body.prepend(backgroundContainer)
 
-  if (window.location.pathname.includes('index.html')) {
+  const isHomepage = !['store', 'team', 'story', 'plan'].some(e => window.location.pathname.includes(e))
+  if (isHomepage) {
     const dynamite = document.getElementById('dynamite')
     const dynamiteSection = document.getElementById('dynamite-section')
     const explosionBackground = "url('assets/backgrounds/background-explosion.png')"
@@ -65,7 +66,7 @@ window.onload = () => {
     }, 1000);
   }
 
-  if (window.location.pathname.includes('plan.html')) {
+  if (window.location.pathname.includes('plan')) {
     // dynamically populate plan text based on which step is clicked
     const planLinks = document.getElementsByClassName('plan-link')
     const planText = document.getElementById('plan-text')
@@ -73,7 +74,6 @@ window.onload = () => {
     const togglePlanText = (e) => {
       const id = e.target.id
       var text = ''
-      console.log(id)
       switch (id) {
         case 'the-beginning':
           text = ` 
