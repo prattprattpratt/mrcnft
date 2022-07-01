@@ -18,6 +18,11 @@
         display: flex;
         flex-direction: column;
       }
+      @media (max-width: 612px) { 
+        .dynamite-section {
+          top: 76vh;
+        }
+      }
       img.dynamite {
         height: 150px;
         transform: rotate(-35deg);
@@ -133,6 +138,14 @@
       }
       .fa-discord {
         top: 50vh;
+      }
+      @media (max-width: 612px) { 
+        .fa-twitter, .fa-discord { 
+          top: 93vh; 
+        } 
+        .fa-discord { 
+          right: 23vw; 
+        } 
       }
     </style>
   </head>
