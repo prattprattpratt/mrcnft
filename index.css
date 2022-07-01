@@ -19,6 +19,9 @@ body {
   z-index: -1;
   filter: var(--background-brightness)
 }
+.header-container {
+  height: 120px;
+}
 .main-header {
   display: flex;
   justify-content: center;
@@ -28,7 +31,7 @@ body {
   overflow: hidden;
 }
 @media (max-width: 611px) { .main-header { display: none; } }
-@media (min-width: 612px) { .main-header { font-size: 35px; } .mobile-header { display: none; } }
+@media (min-width: 612px) { .main-header { font-size: 35px; } .mobile-header { display: none !important; } }
 @media (min-width: 786px) { .main-header { font-size: 45px; } }
 @media (min-width: 969px) { .main-header { font-size: 55px; } }
 .main-header .header-link {

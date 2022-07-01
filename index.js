@@ -1,6 +1,6 @@
 window.onload = () => {
   const header = `
-    <div>
+    <div class="header-container">
       <header class="main-header">
         <a class="header-link" href="team.html">Team</a>
         <a class="header-link" href="story.html">Story</a>
